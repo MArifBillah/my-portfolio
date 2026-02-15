@@ -1,65 +1,366 @@
-import Image from "next/image";
+"use client";
+
+import { Globe, Cpu, Server, Box, Gamepad2, User } from "lucide-react";
+import ExpertiseClickable from "./components/ExpertiseClickable";
+import { useContactModal } from "./ContactModalContext";
+import { useLanguage } from "./LanguageContext";
+import { translations } from "./translations";
 
 export default function Home() {
+  const { setIsContactModalOpen } = useContactModal();
+  const { language } = useLanguage();
+  const t = translations[language];
+
+  const getSystemAutoDescription = () => {
+    if (language === "ID") {
+      return `
+      ${t.systemAutoIntro}
+      <br><br>
+      <article>
+        <b>${t.eCareName}</b>
+        <p>${t.eCareDesc}</p>
+      </article>
+      <br>
+      <article>
+        <b>${t.cashInsuranceName}</b>
+        <p>${t.cashInsuranceDesc}</p>
+      </article>
+      <br>
+      <article>
+        <b>${t.slaMonitoringName}</b>
+        <p>${t.slaMonitoringDesc}</p>
+      </article>
+      <br>
+      <article>
+        <b>${t.bankInsuranceName}</b>
+        <p>${t.bankInsuranceDesc}</p>
+      </article>
+      <br><br>
+      ${t.confidentialityNote}
+      `;
+    } else {
+      return `
+      ${t.systemAutoIntro}
+      <br><br>
+      <article>
+        <b>${t.eCareName}</b>
+        <p>${t.eCareDesc}</p>
+      </article>
+      <br>
+      <article>
+        <b>${t.cashInsuranceName}</b>
+        <p>${t.cashInsuranceDesc}</p>
+      </article>
+      <br>
+      <article>
+        <b>${t.slaMonitoringName}</b>
+        <p>${t.slaMonitoringDesc}</p>
+      </article>
+      <br>
+      <article>
+        <b>${t.bankInsuranceName}</b>
+        <p>${t.bankInsuranceDesc}</p>
+      </article>
+      <br><br>
+      ${t.confidentialityNote}
+      `;
+    }
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="pt-20">
+      {/* Hero / Banner */}
+      <section
+        className="relative w-full bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/background.jpg')" } } id="about"
+      >
+        {/* Overlay for readability */}
+        <div className="absolute inset-0 bg-white/40"></div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-24">
+
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black leading-tight">
+            {t.heroMain}
+            <span className="text-teal-600"> {t.heroMain2}</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+          <p className="mt-6 max-w-2xl text-base sm:text-lg text-black/70">
+            {t.heroDesc}
           </p>
+
+          <div className="mt-10">
+            <button
+              onClick={() => setIsContactModalOpen(true)}
+              className="inline-flex items-center justify-center
+                        rounded-md bg-teal-600 px-8 py-4
+                        text-sm font-semibold text-white
+                        hover:bg-teal-700 transition"
+            >
+              {t.heroBtn}
+            </button>
+          </div>
+
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </section>
+
+      {/* Expertise Section */}
+<section id="projects" className="w-full bg-white border-t border-black/10">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-24">
+
+    {/* Section Header */}
+    <div className="max-w-2xl">
+      <h2 className="text-3xl sm:text-4xl font-bold text-black">
+        {t.expertiseTitle}
+      </h2>
+      <p className="mt-4 text-black/70">
+        {t.expertiseDesc}
+      </p>
     </div>
+
+    {/* Cards */}
+
+<div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
+  {/* Card 1 */}
+  <ExpertiseClickable
+    title={t.webDevTitle}
+    year={2026}
+    link="https://example.com"
+    description={t.webDevLongDesc}
+    className="p-8 rounded-lg border border-black/10 hover:border-teal-600 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
+  >
+    <Globe className="w-8 h-8 text-teal-600" />
+
+    <h3 className="mt-6 text-lg font-semibold text-black">
+      {t.webDevTitle}
+    </h3>
+
+    <p className="mt-4 text-sm text-black/70">
+      {t.webDevDesc}
+    </p>
+  </ExpertiseClickable>
+
+  {/* Card 2 */}
+  <ExpertiseClickable
+    title={t.systemAutoTitle}
+    year={'2023-2026'}
+   links={[
+      // { label: "Example 1", url: "https://example.com" },
+      // { label: "Example 2", url: "https://example2.com" }
+    ]} 
+    // subtitles={['hi', 'hello']} 
+    description={getSystemAutoDescription()}
+    className="p-8 rounded-lg border border-black/10 hover:border-teal-600 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
+  >
+    <Cpu className="w-8 h-8 text-teal-600" />
+
+    <h3 className="mt-6 text-lg font-semibold text-black">
+      {t.systemAutoTitle}
+    </h3>
+
+    <p className="mt-4 text-sm text-black/70">
+      {t.systemAutoDesc}
+    </p>
+  </ExpertiseClickable>
+
+  {/* Card 3 */}
+  <ExpertiseClickable
+    title={t.itInfraTitle}
+    year={'2023'}
+   
+    // subtitles={['hi', 'hello']} 
+    description={t.itInfraLongDesc}
+    className="p-8 rounded-lg border border-black/10 hover:border-teal-600 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
+  > 
+    <Server className="w-8 h-8 text-teal-600" />
+
+    <h3 className="mt-6 text-lg font-semibold text-black">
+      {t.itInfraTitle}
+    </h3>
+
+    <p className="mt-4 text-sm text-black/70">
+      {t.itInfraDesc}
+    </p>
+  </ExpertiseClickable>
+
+  {/* Card 6 */}
+  <ExpertiseClickable
+    title={t.itSupportTitle}
+    year={'2024-2026'}
+   links={[
+      { label: "CMSP Login Page", url: "https://cmsp.bankkalsel.co.id/login" },
+    ]} 
+    // subtitles={['hi', 'hello']} 
+    description={t.itSupportLongDesc}
+    className="p-8 rounded-lg border border-black/10 hover:border-teal-600 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
+  > 
+    <User className="w-8 h-8 text-teal-600" />
+
+    <h3 className="mt-6 text-lg font-semibold text-black">
+       {t.itSupportTitle}
+    </h3>
+
+    <p className="mt-4 text-sm text-black/70">
+    {t.itSupportDesc}
+    </p>
+  </ExpertiseClickable>
+
+  {/* Card 4 */}
+  <ExpertiseClickable
+    title={t.modelingTitle}
+    year={'2019-2026'}
+   links={[
+      { label: "Shutterstock Portfolio", url: "https://www.shutterstock.com/g/John+Assets?rid=474086059" }
+    ]} 
+    // subtitles={['hi', 'hello']} 
+    description={t.modelingLongDesc}
+    className="p-8 rounded-lg border border-black/10 hover:border-teal-600 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
+  >
+     <Box className="w-8 h-8 text-teal-600" />
+
+    <h3 className="mt-6 text-lg font-semibold text-black">
+       {t.modelingTitle}
+    </h3>
+
+    <p className="mt-4 text-sm text-black/70">
+    {t.modelingDesc}
+    </p>
+  </ExpertiseClickable>
+   
+  {/* Card 5 */}
+  <ExpertiseClickable
+    title={t.gameDevTitle}
+    year={'2023-2026'}
+   links={[
+      { label: "Cure Runner 2019", url: "https://youtu.be/RPBW5za9z6A?si=Wpk5t4qlBnuMD7UE" },
+      { label: "Oto's Advent 2022", url: "https://youtu.be/UPXBocXboTY?si=WkczEOjfoythZsMC" },
+      { label: "Sign Adventure 2023", url: "https://youtu.be/0l3k86bQ50I?si=ZLC0cFqM_q48F_el" }
+    ]} 
+    // subtitles={['hi', 'hello']} 
+    description={t.gameDevLongDesc}
+    className="p-8 rounded-lg border border-black/10 hover:border-teal-600 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
+  >
+    <Gamepad2 className="w-8 h-8 text-teal-600" />
+
+    <h3 className="mt-6 text-lg font-semibold text-black">
+       {t.gameDevTitle}
+    </h3>
+
+    <p className="mt-4 text-sm text-black/70">
+    {t.gameDevDesc}
+    </p>
+  </ExpertiseClickable>
+
+  
+
+</div>
+
+
+    {/* Experience Highlight */}
+<div className="mt-24">
+  
+  <div className="max-w-7xl bg-white rounded-2xl p-10 shadow-lg 
+                  border border-white/20 
+                  hover:shadow-2xl transition-all duration-500">
+
+    <span className="text-sm font-semibold text-teal-600 tracking-wider uppercase">
+      {t.profExpLabel}
+    </span>
+
+    <h3 className="mt-4 text-3xl font-bold text-black">
+      {t.profExpTitle}
+    </h3>
+
+    <p className="mt-6 text-black/70 leading-relaxed">
+      {t.profExpDesc}
+    </p>
+
+    {/* Achievement Grid */}
+    <div className="mt-8 grid sm:grid-cols-3 gap-6">
+
+      <div>
+        <p className="text-2xl font-bold text-teal-600">{t.profExpYear}</p>
+        <p className="text-sm text-black/60 mt-1">
+          {t.profExpYearDesc}
+        </p>
+      </div>
+
+      <div>
+        <p className="text-2xl font-bold text-teal-600">{t.profExpMulti}</p>
+        <p className="text-sm text-black/60 mt-1">
+          {t.profExpMultiDesc}
+        </p>
+      </div>
+
+      <div>
+        <p className="text-2xl font-bold text-teal-600">{t.profExpWeb}</p>
+        <p className="text-sm text-black/60 mt-1">
+          {t.profExpWebDesc}
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+{/* Education Section */}
+<div className="mt-24">
+  
+  <div className="max-w-7xl bg-white rounded-2xl p-10 shadow-lg 
+                  border border-white/20 
+                  hover:shadow-2xl transition-all duration-500">
+
+    <span className="text-sm font-semibold text-teal-600 tracking-wider uppercase">
+      {t.educationLabel}
+    </span>
+
+    <h3 className="mt-4 text-3xl font-bold text-black">
+      {t.educationTitle}
+    </h3>
+
+    <p className="mt-2 text-black/60">
+      {t.educationSchool}
+    </p>
+
+    <p className="mt-6 text-black/70 leading-relaxed">
+      {t.educationDesc}
+    </p>
+
+    {/* Academic Highlights */}
+    <div className="mt-8 grid sm:grid-cols-3 gap-6">
+
+      <div>
+        <p className="text-2xl font-bold text-teal-600">{t.educationSoftware}</p>
+        <p className="text-sm text-black/60 mt-1">
+          {t.educationSoftwareDesc}
+        </p>
+      </div>
+
+      <div>
+        <p className="text-2xl font-bold text-teal-600">{t.educationDatabase}</p>
+        <p className="text-sm text-black/60 mt-1">
+          {t.educationDatabaseDesc}
+        </p>
+      </div>
+
+      <div>
+        <p className="text-2xl font-bold text-teal-600">{t.educationNetworks}</p>
+        <p className="text-sm text-black/60 mt-1">
+          {t.educationNetworksDesc}
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+
+  </div>
+</section>
+    </main>
   );
 }
