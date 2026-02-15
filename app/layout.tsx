@@ -8,6 +8,7 @@ import Footer from "./footer";
 import ContactModal from "./components/ContactModal";
 import { ContactModalProvider, useContactModal } from "./ContactModalContext";
 import { LanguageProvider } from "./LanguageContext";
+import { Analytics } from "@vercel/analytics/next";
 
 
 const geistSans = Geist({
@@ -41,6 +42,7 @@ function RootLayoutContent({
         {children}
         <ContactModal open={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
