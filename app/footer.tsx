@@ -50,14 +50,14 @@ export default function Footer() {
           {t.footerText}
         </p>
 
-        <div className="flex gap-6 mt-4 sm:mt-0">
+        {/* <div className="flex gap-6 mt-4 sm:mt-0">
           <Link href="/terms" className="hover:text-teal-600 transition">
             Terms of Service
           </Link>
           <Link href="/privacy" className="hover:text-teal-600 transition">
             Privacy Policy
           </Link>
-        </div>
+        </div> */}
 
       </div>
 
