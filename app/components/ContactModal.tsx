@@ -82,7 +82,7 @@ export default function ContactModal({ open, onClose }: Props) {
           </a>
 
           {/* Phone */}
-          <a
+          {/* <a
             href="tel:+62123456789"
             className="flex items-center gap-4 p-4 rounded-lg border border-black/10 hover:border-teal-600 hover:bg-teal-50 transition group"
           >
@@ -93,7 +93,7 @@ export default function ContactModal({ open, onClose }: Props) {
                 +62 831-3130-8722
               </p>
             </div>
-          </a>
+          </a> */}
 
           {/* LinkedIn */}
           <a
