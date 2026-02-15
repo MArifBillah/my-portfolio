@@ -9,8 +9,8 @@ export const translations = {
     navLanguage: "Language",
     
     // Hero Section
-    heroMain: "Building clean, reliable",
-    heroMain2: "web experiences",
+    heroMain: "Web-based business systems for ",
+    heroMain2: "automation, reporting, and operational efficiency.",
     heroDesc: "I'm Arif, an IT & web developer focused on building fast, maintainable applications with modern technologies.",
     heroBtn: "Contact Me",
     
@@ -19,10 +19,12 @@ export const translations = {
     expertiseDesc: "I specialize in building structured, scalable systems with a strong focus on performance, maintainability, and clean architecture.",
     
     // Web Development Card
-    webDevTitle: "Web Development",
-    webDevDesc: "Building modern web applications using Next.js, React, and structured backend systems.",
-    webDevLongDesc: "Hi! This whole page is built using Next.js 13 with the new App Router. I focus on building modern web applications using React, Next.js, and structured backend systems to deliver fast, maintainable solutions.",
-    
+webDevTitle: "Web Development",
+
+webDevDesc: "Building modern web applications using Next.js, React, and structured backend systems with Laravel and CodeIgniter.",
+
+webDevLongDesc: "Hi! This entire page is built using Next.js 13 with the latest App Router. I specialize in developing modern web applications using React and Next.js for the frontend, combined with Laravel and CodeIgniter to build secure, structured, and scalable backend systems. My approach focuses on delivering fast, maintainable solutions tailored to real business needs.",
+ 
     // System Automation Card
     systemAutoTitle: "System Automation",
     systemAutoDesc: "Developing internal tools that automate workflows and improve operational efficiency.",
@@ -96,8 +98,8 @@ export const translations = {
     navLanguage: "Bahasa",
     
     // Hero Section
-    heroMain: "Membangun pengalaman web yang",
-    heroMain2: "bersih dan andal",
+    heroMain: "Sistem bisnis berbasis web untuk ",
+    heroMain2: "otomatisasi, pelaporan, dan efisiensi operasional.",
     heroDesc: "Saya Arif, seorang pengembang IT & web yang fokus pada pembuatan aplikasi yang cepat dan mudah dipelihara dengan teknologi modern.",
     heroBtn: "Hubungi Saya",
     
@@ -107,9 +109,11 @@ export const translations = {
     
     // Web Development Card
     webDevTitle: "Pengembangan Web",
-    webDevDesc: "Membangun aplikasi web modern menggunakan Next.js, React, dan sistem backend yang terstruktur.",
-    webDevLongDesc: "Halo! Seluruh halaman ini dibangun menggunakan Next.js 13 dengan App Router terbaru. Saya berfokus pada pembuatan aplikasi web modern menggunakan React, Next.js, dan sistem backend terstruktur untuk memberikan solusi yang cepat dan mudah dipelihara.",
-    
+
+    webDevDesc: "Membangun aplikasi web modern menggunakan Next.js, React, serta backend terstruktur dengan Laravel dan CodeIgniter.",
+
+    webDevLongDesc: "Halo! Seluruh halaman ini dibangun menggunakan Next.js 13 dengan App Router terbaru. Saya berfokus pada pengembangan aplikasi web modern menggunakan React dan Next.js untuk sisi frontend, serta Laravel dan CodeIgniter untuk membangun backend yang terstruktur, aman, dan mudah dikembangkan. Pendekatan ini memungkinkan saya menghadirkan solusi yang cepat, scalable, dan mudah dipelihara untuk kebutuhan bisnis.",
+
     // System Automation Card
     systemAutoTitle: "Otomasi Sistem",
     systemAutoDesc: "Mengembangkan alat internal yang mengotomatiskan alur kerja dan meningkatkan efisiensi operasional.",
