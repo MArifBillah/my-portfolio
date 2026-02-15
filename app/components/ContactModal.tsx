@@ -97,7 +97,7 @@ export default function ContactModal({ open, onClose }: Props) {
 
           {/* LinkedIn */}
           <a
-            href="https://linkedin.com/in/arif"
+            href="https://www.linkedin.com/in/muhammad-arif-billah-b08250237/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-4 p-4 rounded-lg border border-black/10 hover:border-teal-600 hover:bg-teal-50 transition group"
@@ -106,7 +106,7 @@ export default function ContactModal({ open, onClose }: Props) {
             <div>
               <p className="text-sm text-black/60 group-hover:text-black/70">LinkedIn</p>
               <p className="text-lg font-semibold text-black group-hover:text-teal-600 transition">
-                linkedin.com/in/arif
+                Muhammad Arif Billah
               </p>
             </div>
           </a>
