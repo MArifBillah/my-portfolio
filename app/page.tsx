@@ -14,6 +14,17 @@ export default function Home() {
 
   const [showMore, setShowMore] = useState(false);
 
+  const getWebDevelopmentDescription = () => {
+    return `
+      ${t.webDevLongDesc}
+      <br><br>
+      <article>
+        <b>${t.AlumniName}</b>
+        <p>${t.AlumniSystemDesc}</p>
+      </article>
+    `;
+  };
+
   const getSystemAutoDescription = () => {
     if (language === "ID") {
       return `
@@ -128,8 +139,11 @@ export default function Home() {
             <ExpertiseClickable
               title={t.webDevTitle}
               year={'2023 - 2026'}
-              // link="https://example.com"
-              description={t.webDevLongDesc}
+              
+              links={[
+                { label: "Sistem Alumni YABN", url: "https://kafbi.com" }
+              ]}
+              description={getWebDevelopmentDescription()}
               className="p-8 rounded-lg border border-black/10 hover:border-teal-600 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
             >
               <Globe className="w-8 h-8 text-teal-600" />
@@ -141,6 +155,10 @@ export default function Home() {
               <p className="mt-4 text-sm text-black/70">
                 {t.webDevDesc}
               </p>
+
+            
+
+             
             </ExpertiseClickable>
 
             {/* Card 2 */}

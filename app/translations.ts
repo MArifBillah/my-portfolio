@@ -24,10 +24,12 @@ webDevTitle: "Web Development",
 webDevDesc: "Building modern web applications using Next.js, React, and structured backend systems with Laravel and CodeIgniter.",
 
 webDevLongDesc: "Hi! This entire page is built using Next.js 13 with the latest App Router. I specialize in developing modern web applications using React and Next.js for the frontend, combined with Laravel and CodeIgniter to build secure, structured, and scalable backend systems. My approach focuses on delivering fast, maintainable solutions tailored to real business needs.",
+AlumniName: "Alumni Management System (kafbi.com)",
+AlumniSystemDesc: "Developed a Symfony-based web application to manage alumni records and strengthen the alumni network of Yayasan Amanah Bangun Negeri. Implemented Google OAuth authentication to provide a seamless login experience, and integrated an email system for account verification and password recovery (forgot password). Designed the system to deliver secure, well-structured, and user-friendly alumni data management for both administrators and alumni.",
  
     // System Automation Card
-    systemAutoTitle: "System Automation",
-    systemAutoDesc: "Developing internal tools that automate workflows and improve operational efficiency.",
+    systemAutoTitle: "Enterprise Internal Systems",
+    systemAutoDesc: "Developing internal tools that support workflows and improve operational efficiency.",
     systemAutoIntro: "Below are selected projects I successfully delivered during my tenure at Bank Kalsel, all completed on time with a 100% delivery rate:",
     eCareName: "E-Care (Customer Complaint Management System)",
     eCareDesc: "Designed and developed a web-based customer complaint management system using CodeIgniter 4. The system has operated for over 2 years with a 99.8% completion success rate (only 1 unresolved case out of 6,000+ complaints). Implemented automated regulatory reporting recap for OJK and Bank Indonesia (BI), and deployed across all branches nationwide to standardize complaint handling and compliance tracking.",
@@ -113,10 +115,12 @@ webDevLongDesc: "Hi! This entire page is built using Next.js 13 with the latest 
     webDevDesc: "Membangun aplikasi web modern menggunakan Next.js, React, serta backend terstruktur dengan Laravel dan CodeIgniter.",
 
     webDevLongDesc: "Halo! Seluruh halaman ini dibangun menggunakan Next.js 13 dengan App Router terbaru. Saya berfokus pada pengembangan aplikasi web modern menggunakan React dan Next.js untuk sisi frontend, serta Laravel dan CodeIgniter untuk membangun backend yang terstruktur, aman, dan mudah dikembangkan. Pendekatan ini memungkinkan saya menghadirkan solusi yang cepat, scalable, dan mudah dipelihara untuk kebutuhan bisnis.",
+    AlumniName: "Sistem Manajemen Alumni (kafbi.com)",
+    AlumniSystemDesc: "Mengembangkan aplikasi web berbasis Symfony untuk mengelola data dan jejaring alumni Yayasan Amanah Bangun Negeri. Mengimplementasikan autentikasi menggunakan Google OAuth guna mempermudah proses login, serta membangun sistem email untuk verifikasi akun dan pemulihan kata sandi (forgot password). Sistem dirancang untuk menyediakan pengelolaan data alumni yang aman, terstruktur, dan mudah diakses oleh administrator maupun pengguna.",
 
     // System Automation Card
-    systemAutoTitle: "Otomasi Sistem",
-    systemAutoDesc: "Mengembangkan alat internal yang mengotomatiskan alur kerja dan meningkatkan efisiensi operasional.",
+    systemAutoTitle: "sistem Internal Perusahaan",
+    systemAutoDesc: "Mengembangkan alat internal yang mendukung alur kerja dan meningkatkan efisiensi operasional.",
     systemAutoIntro: "Berikut adalah proyek terpilih yang berhasil saya selesaikan selama masa kerja di Bank Kalsel, semua selesai tepat waktu dengan tingkat pengiriman 100%:",
     eCareName: "E-Care (Sistem Manajemen Keluhan Pelanggan)",
     eCareDesc: "Merancang dan mengembangkan sistem manajemen keluhan pelanggan berbasis web menggunakan CodeIgniter 4. Sistem ini telah beroperasi selama lebih dari 2 tahun dengan tingkat kesuksesan penyelesaian 99,8% (hanya 1 kasus yang tidak terselesaikan dari 6.000+ keluhan). Menerapkan automated regulatory reporting recap untuk OJK dan Bank Indonesia (BI), dan dideploy di seluruh cabang di seluruh negara untuk menstandarkan penanganan keluhan dan pelacakan kepatuhan.",
